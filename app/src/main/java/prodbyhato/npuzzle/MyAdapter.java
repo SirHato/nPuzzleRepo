@@ -37,12 +37,14 @@ class MyAdapter extends BaseAdapter {
         cell.setEmptyTile();
     }
 
+    // This function returns the size of the list.
     @Override
     public int getCount()
     {
         return list.size();
     }
 
+    // This function returns the cell at location i in the list.
     @Override
     public Cell getItem(int i)
     {
@@ -50,6 +52,7 @@ class MyAdapter extends BaseAdapter {
         return cell;
     }
 
+    // This function returns the id of the cell at location i in the list.
     @Override
     public long getItemId(int i)
     {
@@ -58,6 +61,7 @@ class MyAdapter extends BaseAdapter {
         return id;
     }
 
+    // This function returns the position of the empty tile.
     public int getEmptyTilePosition()
     {
         int position = 0;
@@ -74,39 +78,45 @@ class MyAdapter extends BaseAdapter {
         return -1;
     }
 
+    // This function returns the list filled with cells.
     public ArrayList<Cell> getList()
     {
         return list;
     }
 
+    // This function swaps two cells.
     public void swapCells(int emptyPosition, int clickedCellPosition)
     {
         Collections.swap(list, emptyPosition, clickedCellPosition);
         notifyDataSetChanged();
     }
 
+    // This function returns a view. The views get placed in a ViewHolder if it is the first time
+    // creating that item to avoid the constant view.findViewById(R.id.imageView calls. If you are
+    // recycling, get a reference to the existing viewholder which you already stored.
+    // https://www.youtube.com/watch?v=F9q0K1O8m20
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup)
+    public View getView(int i, View clickedView, ViewGroup viewGroup)
     {
-        View row = view;
+        View view = clickedView;
         ViewHolder holder = null;
 
-        if(row == null)
+        if(view == null)
         {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.single_item, viewGroup,false);
-            holder = new ViewHolder(row);
-            row.setTag(holder);
+            view = inflater.inflate(R.layout.single_item, viewGroup,false);
+            holder = new ViewHolder(view);
+            view.setTag(holder);
         }
 
         else
         {
-            holder = (ViewHolder) row.getTag();
+            holder = (ViewHolder) view.getTag();
         }
 
         Cell temp = list.get(i);
         holder.myCellView.setImageBitmap(temp.getCellBitmap());
 
-        return row;
+        return view;
     }
 }

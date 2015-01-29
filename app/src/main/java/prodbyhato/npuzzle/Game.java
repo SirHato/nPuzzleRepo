@@ -30,25 +30,6 @@ public class Game extends Activity implements AdapterView.OnItemClickListener{
     private MyAdapter myAdapter;
     private int totalTaps = 0;
     private String imageUri;
-//    private final String mySharedPreferences = "mySavedState";
-//
-//    @Override
-//    protected void onPause()
-//    {
-//        super.onPause();
-//
-//        // Enable shared preferences
-//        final SharedPreferences settings = getSharedPreferences(mySharedPreferences, MODE_PRIVATE);
-//        final SharedPreferences.Editor editor = settings.edit();
-//
-//        // Call and clear editor
-//        editor.clear();
-//
-//        ...
-//
-//
-//        editor.commit();
-//    }
 
     // This function is called when this activity is started.
     @Override
@@ -101,14 +82,11 @@ public class Game extends Activity implements AdapterView.OnItemClickListener{
                 myAdapter.notifyDataSetChanged();
             }
         }.start();
-
-
     }
 
     // This function disables the use of the back button.
     @Override
     public void onBackPressed(){}
-
 
     // This function updates the position of all the cells.
     public void updateCellPositions()

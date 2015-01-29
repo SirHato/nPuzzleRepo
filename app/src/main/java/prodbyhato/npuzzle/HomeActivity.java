@@ -24,8 +24,16 @@ public class HomeActivity extends Activity {
     private static final int SELECT_PHOTO = 100;
     private Uri imageUri;
 
+    // This function is called when the activity is opened.
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+    }
 
-    public void takephoto(View view)
+    // This function handles the click on the take photo button. Camera will be opened.
+    public void takePhoto(View view)
     {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File photo = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "picture.jpg");
@@ -34,19 +42,12 @@ public class HomeActivity extends Activity {
         startActivityForResult(intent, TAKE_PICTURE);
     }
 
-    public void choosephoto(View view)
+    // This function handles the click on the choose photo button. Gallery will be opened.
+    public void choosePhoto(View view)
     {
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-    }
-
-    // This function is called when the activity is opened.
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
     }
 
     @Override
