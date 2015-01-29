@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="prodbyhato.npuzzle" >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="prodbyhato.npuzzle.HomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.TakePhoto"
+            android:label="@string/title_activity_take_photo" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.ChoosePhoto"
+            android:label="@string/title_activity_choose_photo" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Edit"
+            android:label="@string/title_activity_edit" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Game"
+            android:label="@string/title_activity_game" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Settings"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Stats"
+            android:label="@string/title_activity_stats" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Highscores"
+            android:label="@string/title_activity_highscores" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Difficulty"
+            android:label="@string/title_activity_difficulty" >
+        </activity>
+        <activity
+            android:name="prodbyhato.npuzzle.Won"
+            android:label="@string/title_activity_won" >
+        </activity>
+    </application>
+
+</manifest>

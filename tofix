@@ -1,0 +1,37 @@
+hallo, 
+
+ik vraag om andermans mening en ga dus helemaal nergens vanuit. Ergens vanuit gaan is bijvoorbeeld zeggen dat ik deze moeite heb genomen om te hopen dat mijn remix beter is en om met het delen van dit nummer props binnen te halen. Zoals ik hierboven ergens heb gezegd vind ik het ook alleen maar geinig verder.. 
+
+Joe.   
+
+public void sendMessage(View view) {
+        Intent intent = new Intent(this, MainActivity2.class);
+
+        startActivity(intent);
+    }
+
+
+    if (bitmap.getWidth() >= bitmap.getHeight()){
+
+  dstBmp = Bitmap.createBitmap(
+     bitmap, 
+     bitmap.getWidth()/2 - bitmap.getHeight()/2,
+     0,
+     bitmap.getHeight(), 
+     bitmap.getHeight()
+     );
+
+}else{
+
+  dstBmp = Bitmap.createBitmap(
+     bitmap,
+     0, 
+     bitmap.getHeight()/2 - bitmap.getWidth()/2,
+     bitmap.getWidth(),
+     bitmap.getWidth() 
+     );
+}
+
+To Fix: 
+- unieke bestandsnamen fotos
+- als battery low is kan je geen foto maken en daarna gaat hij terug naar takephoto activity en zit hij vast daar
